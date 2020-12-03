@@ -6,21 +6,16 @@ body {
     "main aside"
     "footer footer";
   grid-template-columns: 1fr 2fr;
- /* grid-template-rows: 1fr 1fr 1fr;*/
   justify-content: space-around;
   padding: 20px;
   line-height: 1.5em;
-
 }
 
 header {
-  grid-area: header;/*
-  background-image: url(swedish-cookie.jpg);*/
+  grid-area: header;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top right;
-  height: 250px;
-  width: 100%;
   border-bottom: dotted 5px black;
   padding-bottom: 10px;
 }
@@ -39,7 +34,7 @@ main {
 
 aside {
   grid-area: aside;
-  padding: 15px 0px;
+  padding: 15px 10px;
 }
 
 div {
@@ -60,7 +55,7 @@ li{
 }
 
 h1 {
-  font-size: 12.5em;
+  font-size: 5rem;
   font-family: 'Spirax', cursive;
   color: #ab3028;
 
@@ -75,12 +70,13 @@ h2 {
 h3 {
   font-size: 30px;
   font-family: 'Spirax', cursive;
-  padding: 5px;
+  margin: 10px 0;
 }
 
 p {
   font-size: 25px;
   padding-bottom: 15px;
+  line-height: 1.25;
 }
 
 .fab {
@@ -91,4 +87,24 @@ p {
 footer{
   grid-area: footer;
   padding-top: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+   body {
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    padding: 20px;
+    line-height: 1.5em;
+  }
+  img {
+    display: none;
+  }
+  h1 {
+    padding-bottom: 10px;
+  }
 }
